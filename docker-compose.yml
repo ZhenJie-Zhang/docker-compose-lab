@@ -9,18 +9,13 @@ services:
     volumes:
       - ./work:/home/jovyan/work/
     command: start-notebook.sh --NotebookApp.token=''
-  mariadb:
-    image: mariadb
-    container_name: mariadb.lab
+  mysql:
+    image: mysql:5.7
+    container_name: mysql.lab
     ports:
       - "3306:3306"
     volumes:
-      - ./mariadb/data:/data/db/
+      - ./mysql/data:/data/db/
     environment:
-      MYSQL_ROOT_PASSWORD: iii
-  adminer:
-    image: adminer
-    restart: always
-    ports: 
-      - "8070:8070"
+      - MYSQL_ROOT_PASSWORD=iii
 
