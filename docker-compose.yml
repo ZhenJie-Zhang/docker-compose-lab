@@ -1,0 +1,26 @@
+version: '3'
+services:
+  jupyter-tutorial:
+    build: .
+    container_name: jupyter.local
+    ports:
+      - "8888:8888"
+      - "5000:5000"
+    volumes:
+      - ./work:/home/jovyan/work/
+    command: start-notebook.sh --NotebookApp.token=''
+  mariadb:
+    image: mariadb
+    container_name: mariadb.lab
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mariadb/data:/data/db/
+    environment:
+      MYSQL_ROOT_PASSWORD: iii
+  adminer:
+    image: adminer
+    restart: always
+    ports: 
+      - "8070:8070"
+
