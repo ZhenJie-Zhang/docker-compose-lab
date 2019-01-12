@@ -3,16 +3,16 @@ services:
   jupyter-tutorial:
     build: .
     container_name: jupyter.local
-    ports:
+    ports:  
       - "8888:8888"
       - "5000:5000"
     volumes:
       - ./work:/home/jovyan/work/
     command: start-notebook.sh --NotebookApp.token=''
-  mysql:
+  mysql:  
     image: mysql:5.7
-    container_name: cc104.mysql.lab
-    ports:
+    container_name: mysql.lab
+    ports:  
       - "3306:3306"
     volumes:
       - ./mysql/data:/data/db/
@@ -20,6 +20,13 @@ services:
       - MYSQL_ROOT_PASSWORD=iii
   dynamodb:
     image: amazon/dynamodb-local
-    container_name: cc104.dynamodb.lab
-    ports:
+    container_name: dynamodb.lab
+    ports:  
       - "8000:8000"
+    domainname: "cc104.dynamodb.local"
+  sqs-local:
+    image: vsouza/sqs-local
+    container_name: sqs.local
+    ports:
+      - "9324:9324"
+    domainname: "cc104.sqs.local" 
