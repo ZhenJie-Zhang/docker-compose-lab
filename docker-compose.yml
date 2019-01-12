@@ -11,11 +11,15 @@ services:
     command: start-notebook.sh --NotebookApp.token=''
   mysql:
     image: mysql:5.7
-    container_name: mysql.lab
+    container_name: cc104.mysql.lab
     ports:
       - "3306:3306"
     volumes:
       - ./mysql/data:/data/db/
     environment:
       - MYSQL_ROOT_PASSWORD=iii
-
+  dynamodb:
+    image: amazon/dynamodb-local
+    container_name: cc104.dynamodb.lab
+    ports:
+      - "8000:8000"
