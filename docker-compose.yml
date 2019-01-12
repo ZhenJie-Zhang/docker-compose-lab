@@ -11,7 +11,7 @@ services:
     command: start-notebook.sh --NotebookApp.token=''
   mysql:  
     image: mysql:5.7
-    container_name: mysql.lab
+    container_name: cc104.mysql.local
     ports:  
       - "3306:3306"
     volumes:
@@ -20,13 +20,16 @@ services:
       - MYSQL_ROOT_PASSWORD=iii
   dynamodb:
     image: amazon/dynamodb-local
-    container_name: dynamodb.lab
+    container_name: cc104.dynamodb.local
     ports:  
       - "8000:8000"
-    domainname: "cc104.dynamodb.local"
   sqs-local:
     image: vsouza/sqs-local
-    container_name: sqs.local
+    container_name: cc104.sqs.local
     ports:
       - "9324:9324"
-    domainname: "cc104.sqs.local" 
+  s3-local:
+    image: gliffy/fake-s3
+    container_name: cc104.s3.local
+    ports:
+      - "4569:4569"
