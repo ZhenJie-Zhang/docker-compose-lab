@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "timestamp": 1547636358847,
+  "subscriptions": [{
+    "arn": "arn:aws:sns:us-east-1:123456789012:ShoppingEvents:96b191ac-4979-4649-b952-481857282eb4",
+    "topicArn": "arn:aws:sns:us-east-1:123456789012:ShoppingEvents",
+    "endpoint": "http://sqs:9324/queue/test_queue1",
+    "owner": "",
+    "protocol": "sqs"
+  }, {
+    "arn": "arn:aws:sns:us-east-1:123456789012:cc104:6721cc2b-188d-4298-ac0d-bb5114e3e4df",
+    "topicArn": "arn:aws:sns:us-east-1:123456789012:cc104",
+    "endpoint": "http://sqs:9324/queue/test_queue2",
+    "subscriptionAttributes": {
+      "FilterPolicy": "{\"event_type\": [\"order_placed\", \"order_cancelled\"]}"
+    },
+    "owner": "",
+    "protocol": "sqs"
+  }, {
+    "arn": "arn:aws:sns:us-east-1:123456789012:cc104_test:b6479d1e-7c73-4189-8441-71ea886faee0",
+    "topicArn": "arn:aws:sns:us-east-1:123456789012:cc104_test",
+    "endpoint": "aws-sqs://test33?amazonSQSEndpoint=http://cc104.sqs.local:9324&accessKey=&secretKey=",
+    "owner": "",
+    "protocol": "sqs"
+  }, {
+    "arn": "arn:aws:sns:us-east-1:123456789012:cc104_test:33eb802c-6c81-4545-b3d7-cd23579e0730",
+    "topicArn": "arn:aws:sns:us-east-1:123456789012:cc104_test",
+    "endpoint": "aws-sqs://test?amazonSQSEndpoint=http://cc104.sqs.local:9324&accessKey=&secretKey=",
+    "owner": "",
+    "protocol": "sqs"
+  }, {
+    "arn": "arn:aws:sns:us-east-1:123456789012:cc104_test:8759e637-f1c8-4a90-b3c4-e94a31d3390e",
+    "topicArn": "arn:aws:sns:us-east-1:123456789012:cc104_test",
+    "endpoint": "aws-sqs://cc104test?amazonSQSEndpoint=http://cc104.sqs.local:9324&accessKey=&secretKey=",
+    "owner": "",
+    "protocol": "sqs"
+  }, {
+    "arn": "arn:aws:sns:us-east-1:123456789012:cc104_test:ecde2fbc-e9a3-45fc-9876-1a90d12a26a8",
+    "topicArn": "arn:aws:sns:us-east-1:123456789012:cc104_test",
+    "endpoint": "http://sqs:9324/queue/cc104test",
+    "owner": "",
+    "protocol": "sqs"
+  }, {
+    "arn": "arn:aws:sns:us-east-1:123456789012:cc104_test:830ce6fc-706e-4c93-943c-918aa76ede6e",
+    "topicArn": "arn:aws:sns:us-east-1:123456789012:cc104_test",
+    "endpoint": "http://cc104.sqs.local:9324/queue/cc104test",
+    "owner": "",
+    "protocol": "sqs"
+  }],
+  "topics": [{
+    "arn": "arn:aws:sns:us-east-1:123456789012:test1",
+    "name": "test1"
+  }, {
+    "arn": "arn:aws:sns:us-east-1:123456789012:ShoppingEvents",
+    "name": "ShoppingEvents"
+  }, {
+    "arn": "arn:aws:sns:us-east-1:123456789012:cc104",
+    "name": "cc104"
+  }, {
+    "arn": "arn:aws:sns:us-east-1:123456789012:cc104_test",
+    "name": "cc104_test"
+  }]
+}
