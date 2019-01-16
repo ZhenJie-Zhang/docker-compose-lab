@@ -3,24 +3,46 @@ services:
   jupyter-tutorial:
     build: .
     container_name: jupyter.local
-    ports:
+    ports:  
       - "8888:8888"
       - "5000:5000"
     volumes:
       - ./work:/home/jovyan/work/
     command: start-notebook.sh --NotebookApp.token=''
-  mariadb:
-    image: mariadb
-    container_name: mariadb.lab
-    ports:
+  mysql:  
+    image: mysql:5.7
+    container_name: cc104.mysql.local
+    ports:  
       - "3306:3306"
     volumes:
-      - ./mariadb/data:/data/db/
+      - ./mysql/data:/data/db/
     environment:
-      MYSQL_ROOT_PASSWORD: iii
-  adminer:
-    image: adminer
-    restart: always
-    ports: 
-      - "8070:8070"
-
+      - MYSQL_ROOT_PASSWORD=iii
+  dynamodb:
+    image: amazon/dynamodb-local
+    container_name: cc104.dynamodb.local
+    ports:  
+      - "8000:8000"
+  s3-local:
+    image: gliffy/fake-s3
+    container_name: cc104.s3.local
+    ports:
+      - "4569:4569"
+  sns:
+    image: s12v/sns
+    container_name: cc104.sns.local
+    ports:
+    - "9911:9911"
+    volumes:
+    - ./config/db.json:/etc/sns/db.json
+    - ./sns_tmp:/tmp
+    depends_on:
+    - sqs
+  sqs:
+    image: s12v/elasticmq
+    container_name: cc104.sqs.local
+    ports:
+    - "9324:9324"
+    volumes:
+    - ./config/elasticmq.conf:/etc/elasticmq/elasticmq.conf
+    - ./sqs_tmp:/tmp
