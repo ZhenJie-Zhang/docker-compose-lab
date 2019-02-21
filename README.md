@@ -254,18 +254,6 @@ http://www.codedata.com.tw/database/mysql-tutorial-9-table-index/
 
 ![](https://d2mxuefqeaa7sj.cloudfront.net/s_B876B3000AB1140044FEE738A95940A731180601AACDD10A56A38FB7A45D2025_1546571604926_image.png)
 
-
-push 到 git
-
-    #先git clone
-    git clone https://github.com/guan840912/lab2.git                                
-    cd lab2/                                                                 
-    git add mission10/                                                       
-    git commit -m "mission10"                                                
-    git push origin master  
-![](https://d2mxuefqeaa7sj.cloudfront.net/s_B876B3000AB1140044FEE738A95940A731180601AACDD10A56A38FB7A45D2025_1546572286110_image.png)
-
-![](https://d2mxuefqeaa7sj.cloudfront.net/s_B876B3000AB1140044FEE738A95940A731180601AACDD10A56A38FB7A45D2025_1546572315112_image.png)
 ## mission11
 # Mission11 - 將DynamoDB的docker環境整合至DockerCompose
 
@@ -528,22 +516,5 @@ step6
     print('afterdelete:', table.item_count)
 ![table.item_count](https://d2mxuefqeaa7sj.cloudfront.net/s_B6AC650958C7504BF1B39AE73600B63B20533C976899C975DFF448A54F706938_1546784354844_image.png)
 
-    git status   #查看 目前狀態
-    git add mission11/
-    git status
-    git reset HEAD mission11
-    git status
-    git add mission11/
-    git status
-    git commit -m "mission11"
-    git status
-    git remote -v
-    git push origin master
-    
-![](https://d2mxuefqeaa7sj.cloudfront.net/s_B6AC650958C7504BF1B39AE73600B63B20533C976899C975DFF448A54F706938_1546786935895_image.png)
-
-![](https://d2mxuefqeaa7sj.cloudfront.net/s_B6AC650958C7504BF1B39AE73600B63B20533C976899C975DFF448A54F706938_1546786969385_image.png)
-
-![](https://d2mxuefqeaa7sj.cloudfront.net/s_B6AC650958C7504BF1B39AE73600B63B20533C976899C975DFF448A54F706938_1546786996723_image.png)
 
 ## mission12
